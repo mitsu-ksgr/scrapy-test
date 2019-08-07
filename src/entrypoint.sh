@@ -9,6 +9,9 @@
 #
 #------------------------------------------------------------------------------
 
-python /src/test.py $@
+#python /src/test.py $@
+
+scrapy runspider /src/test.py
+
 
 exit 0
