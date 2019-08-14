@@ -8,7 +8,7 @@ docker build -t ${DOCKER_IMG} .
 if [ $# -eq 2 ]; then
     if [ "$1" = 'st' ]; then
         docker run --rm \
-            -v "$(pwd)/src":/output \
+            -v "$(pwd)/src":/out \
             -t ${DOCKER_IMG} \
             -s "$2"
 
@@ -18,5 +18,8 @@ if [ $# -eq 2 ]; then
 fi
 
 # ./run.sh
-docker run --rm -t ${DOCKER_IMG} $@
+docker run --rm \
+    -v "$(pwd)/out":/out \
+    -t ${DOCKER_IMG} \
+    $@
 

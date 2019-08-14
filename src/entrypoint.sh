@@ -58,7 +58,7 @@ start_project() {
         err "please specify a project name"
     fi
 
-    local project_path="/output/${project_name}"
+    local project_path="/out/${project_name}"
     scrapy startproject ${project_name} ${project_path}
 }
 
@@ -76,7 +76,21 @@ main() {
         exit 0
     fi
 
-    scrapy runspider /src/test.py
+    local source_path='/src/test.py' #TODO: args
+    local output_file_path='/out/out.json'
+    local result=0
+    scrapy runspider \
+        --output=${output_file_path} \
+        --output-format=json \
+        --loglevel=WARN \
+        ${source_path} \
+        || result=$?
+
+    if [ ! "${result}" = "0" ]; then
+        err "failed to runspider."
+    fi
+
+    echo "Succeeded! output: ${output_file_path}"
     exit 0
 }
 
