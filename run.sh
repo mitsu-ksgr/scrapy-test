@@ -134,7 +134,6 @@ main() {
     esac
 
     sudo chown $USER:$USER ${out_path}/*.*
-
 }
 
 main $@
