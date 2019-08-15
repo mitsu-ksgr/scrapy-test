@@ -2,10 +2,7 @@
 
 #------------------------------------------------------------------------------
 #
-# entrypoint.sh
-#
-# this script takes agrs from `docker run` command and
-# passes them to python script.
+# run.sh
 #
 #------------------------------------------------------------------------------
 
