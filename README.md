@@ -5,6 +5,7 @@ python3 で scrapy を使うテスト
 
 ### cf.
 - https://scrapy.org/
+- https://docs.scrapy.org/en/latest/index.html
 
 
 ### notes
