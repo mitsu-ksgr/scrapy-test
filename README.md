@@ -9,8 +9,14 @@ python3 で scrapy を使うテスト
 
 ### notes
 ```bash
-# Run test.py
+# Run on docker
+% docker build -t python-scrapy-test:latest .
+% docker run --rm \
+  -v "$(pwd)/out":/out \
+  -t python-scrapy-test:latest \
+  runspider --output=/out/out.json --output-format=json --loglevel=WARN /src/test.py
+
+# Run use run.sh
 % ./run.sh runspider /src/test.py
 % cat ./out/out.json
 ```
-
