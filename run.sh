@@ -89,8 +89,6 @@ runspider() {
 
     # TODO: use args
     local output_path="/out/out.json"
-    echo "OutputPath: ${output_path}"
-
     docker run --rm \
       -v "$(pwd)/out":/out \
       -t ${DOCKER_IMG} \
